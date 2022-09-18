@@ -1,0 +1,14 @@
+{
+"textConfiguration": {
+"details": "Hello everyone",
+"state": "This is DiscordCustomRP"
+},
+"imageConfiguration": {
+"largeKey": "discord_logo",
+"largeText": "Discord Logo (large text)",
+"smallKey": "discord_black",
+"smallText": "Discord Black Logo (small text)"
+},
+
+"applicationID": "1019396190732832838"
+}

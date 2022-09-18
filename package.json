@@ -1,0 +1,19 @@
+{
+  "name": "DiscordCustomRP",
+  "version": "1.0.0",
+  "description": "A friendly way to set a Rich Presence in Discord.",
+  "main": "./src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": ["discord-rpc", "discord-presence", "discord-rich-presence"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security"
+  }
+}
