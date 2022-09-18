@@ -10,7 +10,7 @@
 * Click to the **Code** green button.
 * Click on **Download ZIP** button.
 * Unzip the zip file.
-* In your Terminal, go to the DiscordCustomRP folder directory with `cd folder\directory`
+* In your console, go to the DiscordCustomRP folder directory with `cd folder\directory`
 * Type the `npm install` command
 
 ![](https://i.imgur.com/03m7X6b.png)
