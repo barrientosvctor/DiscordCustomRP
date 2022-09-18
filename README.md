@@ -51,7 +51,7 @@ This is the final result of configuring my `config.json`. To get the `applicatio
 ```
 
 ## Running the application
-* To turn on the Rich Presence use the following command on your console: `node src/index.js` or `npm run start`
+* To turn on the Rich Presence use the following command on your console: `node .` or `npm run start`
 
 ## Notes
 * The names of the resources according to the put should be placed in the `smallKey` or` largeKey` fields, depending on the selected size given to the image.
