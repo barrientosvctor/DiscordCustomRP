@@ -13,6 +13,7 @@
 * In your Terminal, go to the DiscordCustomRP folder directory with `cd folder\directory`
 * Type the `npm install` command
 
+![](https://i.imgur.com/03m7X6b.png)
 ![](https://i.imgur.com/p3Nmf1m.png)
 
 ## Creating an application in Discord
@@ -54,5 +55,5 @@ This is the final result of configuring my `config.json`. To get the `applicatio
 * To turn on the Rich Presence use the following command on your console: `node .` or `npm run start`
 
 ## Notes
-* The names of the resources according to the put should be placed in the `smallKey` or` largeKey` fields, depending on the selected size given to the image.
-* To edit the main text of your Rich Presence you must modify the `details` or` state` field, you can always modify the fields that are in quotes.
+* The names of the resources according to the put should be placed in the `smallKey` or `largeKey` fields, depending on the selected size given to the image.
+* To edit the main text of your Rich Presence you must modify the `details` or `state` field, you can always modify the fields that are in quotes.
