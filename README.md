@@ -4,7 +4,7 @@
 
 ## Pre-requisites
 * [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/) (Optional)
+* [git-scm](https://git-scm.com/) (Optional)
 
 ## Installation
 * Click to the **Code** green button.
