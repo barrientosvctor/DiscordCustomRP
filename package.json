@@ -1,6 +1,6 @@
 {
   "name": "DiscordCustomRP",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A friendly way to set a Rich Presence in Discord.",
   "main": "./src/index.js",
   "type": "commonjs",

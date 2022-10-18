@@ -1,15 +1,13 @@
 const DiscordRPC = require("discord-rpc");
 const fs = require("fs");
 
-const rpc = new DiscordRPC.Client({ transport: "ipc" });
-
 console.log("Verifying configuration...");
 
 if (!fs.existsSync("./config.json")) {
-    const data = `{\n"textConfiguration": {\n"details": "Hello everyone",\n"state": "This is DiscordCustomRP"\n},\n"imageConfiguration": {\n"largeKey": "discord_logo",\n"largeText": "Discord Logo (large text)",\n"smallKey": "discord_black",\n"smallText": "Discord Black Logo (small text)"\n},\n\n"applicationID": "463437134137655298"\n}`.toString();
-    console.error("Configutarion Error!");
-    console.error("It is not possible to obtain information with the file \"config.json\". This is because the file does not exist.");
-    console.warn(`We have recreated the "config.json" file with the default data, restart DiscordCustomRP to confirm that you will use these fields. You can modify them later!`);
+    const data = `{\n"textConfiguration": {\n"details": "Hello everyone",\n"state": "This is DiscordCustomRP"\n},\n"imageConfiguration": {\n"largeKey": "discord_logo",\n"largeText": "Discord Logo (large text)",\n"smallKey": "discord_black",\n"smallText": "Discord Black Logo (small text)"\n},\n"buttons": {\n"firstButton": {\n"label": "Button 1",\n"url": "https://google.com"\n},\n"secondButton": {\n"label": "Button 2",\n"url": "https://google.com"\n}\n},\n\n"applicationID": "463437134137655298"\n}`.toString();
+    console.error("\x1b[31m", "Configutarion Error!");
+    console.error("\x1b[31m", "It is not possible to obtain information with the file \"config.json\". This is because the file does not exist.");
+    console.warn("\x1b[33m", `We have recreated the "config.json" file with the default data, restart DiscordCustomRP to confirm that you will use these fields. You can modify them later!`);
 
     fs.writeFileSync("config.json", data);
     process.exit();
@@ -17,14 +15,15 @@ if (!fs.existsSync("./config.json")) {
 
 const config = require("../config.json");
 
-console.log("Verification configuration successfully completed!");
+console.log("\x1b[32m", "Verification configuration successfully completed!");
 console.log("Connecting RPC...");
 
+const rpc = new DiscordRPC.Client({ transport: "ipc" });
 DiscordRPC.register(config.applicationID);
 
 const setActivity = () => {
     if (!rpc) {
-	console.log("RPC no found.");
+	console.error("\x1b[31m", "RPC no found.");
 	process.exit();
     }
 
@@ -39,12 +38,12 @@ const setActivity = () => {
 	instance: false,
 	buttons: [
 	    {
-		label: "Button 1",
-		url: "https://google.com/"
+		label: config.buttons.firstButton.label,
+		url: config.buttons.firstButton.url
 	    },
 	    {
-		label: "Button 2",
-		url: "https://google.com/"
+		label: config.buttons.secondButton.label,
+		url: config.buttons.secondButton.url
 	    }
 	]
     });
@@ -52,7 +51,7 @@ const setActivity = () => {
 
 rpc.on("ready", async () => {
     setActivity();
-    console.log("RPC successfully connected!");
+    console.log("\x1b[32m", "RPC successfully connected!");
 });
 
 rpc.login({ clientId: config.applicationID }).catch(err => console.error(err));

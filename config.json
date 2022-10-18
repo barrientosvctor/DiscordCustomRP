@@ -9,6 +9,16 @@
 "smallKey": "discord_black",
 "smallText": "Discord Black Logo (small text)"
 },
+"buttons": {
+"firstButton": {
+"label": "Button 1",
+"url": "https://google.com"
+},
+"secondButton": {
+"label": "Button 2",
+"url": "https://google.com"
+}
+},
 
-"applicationID": "1019396190732832838"
+"applicationID": "463437134137655298"
 }
