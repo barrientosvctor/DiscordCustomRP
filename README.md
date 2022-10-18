@@ -11,10 +11,10 @@
 * Click on **Download ZIP** button.
 * Unzip the zip file.
 * In your console, go to the DiscordCustomRP folder directory with `cd folder\directory`
-* Type the `npm install` command
+* Type the `npm i` command
 
 ![](https://i.imgur.com/03m7X6b.png)
-![](https://i.imgur.com/p3Nmf1m.png)
+![](https://i.imgur.com/vajnmNW.png)
 
 ## Creating an application in Discord
 * Go to the website: https://discord.com/developers/applications
