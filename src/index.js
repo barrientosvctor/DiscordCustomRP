@@ -21,39 +21,37 @@ console.log("Connecting RPC...");
 const rpc = new DiscordRPC.Client({ transport: "ipc" });
 DiscordRPC.register(config.applicationID);
 
-async function setActivity() {
+const setActivity = () => {
     if (!rpc) {
-        console.error("\x1b[31m", "RPC no found.");
-        process.exit();
+	console.error("\x1b[31m", "RPC no found.");
+	process.exit();
     }
 
-    await rpc.setActivity({
-        details: config.textConfiguration.details,
-        state: config.textConfiguration.state,
-        startTimestamp: Date.now(),
-        largeImageKey: config.imageConfiguration.largeKey,
-        largeImageText: config.imageConfiguration.largeText,
-        smallImageKey: config.imageConfiguration.smallKey,
-        smallImageText: config.imageConfiguration.smallText,
-        instance: false,
-        buttons: [
-            {
-                label: config.buttons.firstButton.label,
-                url: config.buttons.firstButton.url
-            },
-            {
-                label: config.buttons.secondButton.label,
-                url: config.buttons.secondButton.url
-            }
-        ]
+    rpc.setActivity({
+	details: config.textConfiguration.details,
+	state: config.textConfiguration.state,
+	startTimestamp: Date.now(),
+	largeImageKey: config.imageConfiguration.largeKey,
+	largeImageText: config.imageConfiguration.largeText,
+	smallImageKey: config.imageConfiguration.smallKey,
+	smallImageText: config.imageConfiguration.smallText,
+	instance: false,
+	buttons: [
+	    {
+		label: config.buttons.firstButton.label,
+		url: config.buttons.firstButton.url
+	    },
+	    {
+		label: config.buttons.secondButton.label,
+		url: config.buttons.secondButton.url
+	    }
+	]
     });
 }
 
-(async () => {
-    rpc.on("ready", async () => {
-        await setActivity();
-        console.log("\x1b[32m", "RPC successfully connected!");
-    });
+rpc.on("ready", async () => {
+    setActivity();
+    console.log("\x1b[32m", "RPC successfully connected!");
+});
 
-    await rpc.login({ clientId: config.applicationID }).catch(err => console.error(err));
-})();
+rpc.login({ clientId: config.applicationID }).catch(err => console.error(err));
